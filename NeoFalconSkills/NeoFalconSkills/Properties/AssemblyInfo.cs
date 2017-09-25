@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("NeoFalconSkill")]
+[assembly: AssemblyTitle("NeoFalconSkills")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("NeoFalconSkill")]
+[assembly: AssemblyProduct("NeoFalconSkills")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("6e4d7a89-68ba-4dab-b2df-67003f270df5")]
+[assembly: Guid("3de099e0-a6ab-4d78-ac4a-f4675cc6156a")]
 
 // Version information for an assembly consists of the following four values:
 //

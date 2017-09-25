@@ -7,6 +7,7 @@ The Hancom MDS Inc. (MDS Technology)'s Windows 10 IoT Core device (NeoFalcon) ca
 LUIS can detect the User Voice intent then the Bot framework send the corresponding command back to NeoFalcon.   
 
 ![Architecture](image/Cortana_Skills_Kit.png)  
+<<<<<<< HEAD
 
 ##LUIS Setup
 
@@ -32,3 +33,5 @@ In order to set the skills invoke name, you need to configure the name in the Bo
 ![InvocationName](image/InvocationName.png)
 
 
+=======
+>>>>>>> 72460b743e7cccd83ee46bc2132acd66217622de

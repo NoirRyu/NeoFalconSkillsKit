@@ -3,32 +3,24 @@ using System.Threading.Tasks;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
 
-using Microsoft.Azure.Devices;
 using Microsoft.Bot.Builder.Luis.Models;
 using Microsoft.Bot.Builder.Luis;
+using Microsoft.Azure.Devices;
 using System.Collections.Generic;
 using System.Text;
 
-namespace NeoFalconSkill.Dialogs
+namespace NeoFalconSkills.Dialogs
 {
-    
-    [LuisModel("App ID", "Your Subscription ID")]
+    [LuisModel("=====App ID=====", "=====Subscription ID=====")]
     [Serializable]
     public class RootDialog : LuisDialog<object>
     {
-        //public Task StartAsync(IDialogContext context)
-        //{
-        //    context.Wait(MessageReceivedAsync);
-
-        //    return Task.CompletedTask;
-        //}
-
         //chris 
         private const string EntityStatus = "Status";
 
         private string lightStatus;
 
-        static string connectionString = "==========Your Connection string===========";
+        static string connectionString = "==========Your Connection String==========";
         static ServiceClient serviceClient;
         private static string DeviceName = "Your Device Name";
 
@@ -70,7 +62,7 @@ namespace NeoFalconSkill.Dialogs
             bool isWelcomeDone, firstCommand = false;
             context.ConversationData.TryGetValue<bool>("WelcomeDone", out isWelcomeDone);
             context.ConversationData.TryGetValue<bool>("FirstCommand", out firstCommand);
-            
+
             // Did we already do this? Has the user followed up an initial query with another one?
             if (!isWelcomeDone)
             {
@@ -91,7 +83,9 @@ namespace NeoFalconSkill.Dialogs
                 context.ConversationData.SetValue<bool>("WelcomeDone", true);
             }
 
-            
+            //9/21
+            //var AccessaryQuery = new AccessaryQuery();
+
             EntityRecommendation lightstatus;
 
             if (result.TryFindEntity(EntityStatus, out lightstatus))
@@ -105,7 +99,7 @@ namespace NeoFalconSkill.Dialogs
             { "Accessary", "Pinout", "OnBoard"};
             var speakText = new StringBuilder();
 
-           
+
             for (int count = 1; count < 4; count++)
             {
                 speakText.Append($"{count}: {descriptions[count - 1]}");
@@ -220,12 +214,12 @@ namespace NeoFalconSkill.Dialogs
             context.Wait(this.MessageReceived);
         }
 
-       
+
 
         [LuisIntent("Help")]
         public async Task Help(IDialogContext context, LuisResult result)
         {
-            var response = context.MakeMessage();          
+            var response = context.MakeMessage();
 
             //chris 
             response.Summary = "Hi! Try asking me things like 'turn on the light', 'turn off the light' or 'I'd like to turn on the ligh'";
@@ -259,4 +253,6 @@ namespace NeoFalconSkill.Dialogs
         }
 
     }
+
+
 }

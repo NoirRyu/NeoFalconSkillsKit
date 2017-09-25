@@ -1,4 +1,4 @@
-﻿namespace NeoFalconSkill
+﻿namespace NeoFalconSkills
 {
     using System.Xml.Linq;
 
